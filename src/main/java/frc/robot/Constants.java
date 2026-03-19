@@ -24,7 +24,7 @@ public final class Constants {
 
     // Current limit for drivetrain motors. 60A is a reasonable maximum to reduce
     // likelihood of tripping breakers or damaging CIM motors
-    public static final int DRIVE_MOTOR_CURRENT_LIMIT = 55;
+    public static final int DRIVE_MOTOR_CURRENT_LIMIT = 45;
   }
 
   public static final class FuelConstants {
@@ -33,8 +33,8 @@ public final class Constants {
     public static final int INTAKE_LAUNCHER_MOTOR_ID = 1;
 
     // Current limit and nominal voltage for fuel mechanism motors.
-    public static final int FEEDER_MOTOR_CURRENT_LIMIT = 60;
-    public static final int LAUNCHER_MOTOR_CURRENT_LIMIT = 60;
+    public static final int FEEDER_MOTOR_CURRENT_LIMIT = 50;
+    public static final int LAUNCHER_MOTOR_CURRENT_LIMIT = 50;
 
     // Voltage values for various fuel operations. These values may need to be tuned
     // based on exact robot construction.
@@ -55,7 +55,7 @@ public final class Constants {
 
     // This value is multiplied by the joystick value when rotating the robot to
     // help avoid turning too fast and beign difficult to control
-    public static final double DRIVE_SCALING = .7;
-    public static final double ROTATION_SCALING = .8;
+    public static final double DRIVE_SCALING = .65;
+    public static final double ROTATION_SCALING = .6;
   }
 }
