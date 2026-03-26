@@ -52,7 +52,7 @@ public class RobotContainer {
     // Set the options to show up in the Dashboard for selecting auto modes. If you
     // add additional auto modes you can add additional lines here with
     // autoChooser.addOption
-    int auto = 2;
+    int auto = 1;
     if (auto == 1) {
       autoChooser.setDefaultOption("Autonomous1", new auto1(driveSubsystem, fuelSubsystem));
     } else if (auto == 2) {

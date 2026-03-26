@@ -24,10 +24,10 @@ public class CANDriveSubsystem extends SubsystemBase {
 
   public CANDriveSubsystem() {
     // create brushed motors for drive
-    leftLeader = new SparkMax(LEFT_LEADER_ID, MotorType.kBrushed);
-    leftFollower = new SparkMax(LEFT_FOLLOWER_ID, MotorType.kBrushed);
-    rightLeader = new SparkMax(RIGHT_LEADER_ID, MotorType.kBrushed);
-    rightFollower = new SparkMax(RIGHT_FOLLOWER_ID, MotorType.kBrushed);
+    leftLeader = new SparkMax(LEFT_LEADER_ID, MotorType.kBrushless);
+    leftFollower = new SparkMax(LEFT_FOLLOWER_ID, MotorType.kBrushless);
+    rightLeader = new SparkMax(RIGHT_LEADER_ID, MotorType.kBrushless);
+    rightFollower = new SparkMax(RIGHT_FOLLOWER_ID, MotorType.kBrushless);
 
     // set up differential drive class
     drive = new DifferentialDrive(leftLeader, rightLeader);
@@ -53,17 +53,17 @@ public class CANDriveSubsystem extends SubsystemBase {
     // follower. Resetting in case a new controller is swapped
     // in and persisting in case of a controller reset due to breaker trip
     config.follow(leftLeader);
-    leftFollower.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+    //leftFollower.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     config.follow(rightLeader);
-    rightFollower.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+    //rightFollower.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
     // Remove following, then apply config to right leader
     config.disableFollowerMode();
-    rightLeader.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+    //rightLeader.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     // Set config to inverted and then apply to left leader. Set Left side inverted
     // so that postive values drive both sides forward
     config.inverted(true);
-    leftLeader.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+    //leftLeader.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
   }
 
   @Override
